@@ -1,0 +1,35 @@
+.photograph-header {
+  background-color: $white;
+  height: 300px;
+  margin: 0 100px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    color: $lightbrown;
+    font-size: 64px;
+  }
+
+  h2 {
+    color: $darkbrown;
+    font-size: 24px;
+  }
+}
+
+aside {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  background-color: $lightpink;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  gap: 50px;
+
+  span {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}

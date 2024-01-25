@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="src/assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/styles/css/index.css" rel="stylesheet" type="text/css" />
+    <title>Fisheye - photographe</title>
+  </head>
+  <body>
+    <div class="no-modal" aria-hidden="false">
+      <header class="banner">
+        <a href="index.html">
+          <img
+            src="./src/assets/images/logo.png"
+            class="logo"
+            alt="Fisheye Home page"
+        /></a>
+      </header>
+      <main id="main">
+        <section class="photograph-header"></section>
+        <section class="filter">
+          <h2>Trier par</h2>
+          <div class="filter__dropdown">
+            <button type="button" class="filter__btn btn-hover filter-nochange">
+              <span class="current-filter"></span>
+              <span class="arrow">
+                <img src="./src/assets/icons/arrowdown.svg" alt="" />
+              </span>
+            </button>
+            <div id="filter_showlist" class="hidden">
+              <ul class="filter__list">
+                <li>
+                  <button
+                    type="button"
+                    class="filter__btn btn-hover filter-nochange"
+                  >
+                    <span class="current-filter"></span>
+                    <span class="arrow">
+                      <img src="./src/assets/icons/arrowup.svg" alt="" />
+                    </span>
+                  </button>
+                </li>
+                <li class="has-separator">
+                  <button
+                    type="button"
+                    class="filter__btn btn-hover filter-change"
+                    data-filter="Date"
+                  >
+                    Date
+                  </button>
+                </li>
+                <li class="has-separator">
+                  <button
+                    type="button"
+                    class="filter__btn btn-hover filter-change"
+                    data-filter="Titre"
+                  >
+                    Titre
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="photograph-medias"></section>
+        <aside>
+          <div class="likes">
+            <span class="likes-count"></span>
+            <img src="./src/assets/icons/blacklike.svg" alt="" />
+          </div>
+          <span class="tjm"></span>
+        </aside>
+      </main>
+    </div>
+    <div
+      id="contact_modal"
+      role="dialog"
+      aria-hidden="true"
+      aria-describedby="modalTitle"
+    >
+      <div class="modal">
+        <header>
+          <h2 id="modalTitle">Contactez-moi</h2>
+          <img
+            src="./src/assets/icons/close.svg"
+            alt="Fermer la modale"
+            onclick="closeModal()"
+          />
+        </header>
+        <form action="index.html">
+          <div>
+            <label for="firstname">Prénom</label>
+            <input
+              type="text"
+              name="first"
+              id="firstname"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div>
+            <label for="lastname">Nom</label>
+            <input
+              type="text"
+              name="last"
+              id="lastname"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div>
+            <label for="message">Votre message</label>
+            <textarea
+              name="message"
+              id="message"
+              autocomplete="off"
+              required
+            ></textarea>
+          </div>
+          <button class="contact_button">Envoyer</button>
+        </form>
+      </div>
+    </div>
+    <div class="lightbox">
+      <div class="lightbox__arrows">
+        <img
+          src="./src/assets/icons/slidearrow.svg"
+          alt=""
+          class="left__arrow"
+          tabindex="-1"
+        />
+      </div>
+      <div class="lightbox__media">
+        <figure tabindex="-1"></figure>
+      </div>
+      <div class="lightbox__arrows right">
+        <img
+          src="./src/assets/icons/closelightbox.svg"
+          alt="Fermer la lightbox"
+          class="close"
+          onclick="closeLightBox()"
+        />
+        <img
+          src="././src/assets/icons/slidearrow.svg"
+          alt=""
+          class="right__arrow"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+    <!-- modales -->
+    <script src="/src/js/utils/contactForm.js"></script>
+    <script src="/src/js/utils/lightbox.js"></script>
+    <!-- Page -->
+    <script src="src/js/pages/photographer.js" type="module"></script>
+  </body>
+</html>

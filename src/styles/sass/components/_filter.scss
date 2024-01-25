@@ -1,0 +1,60 @@
+.filter {
+  margin: 50px 100px;
+  display: flex;
+  gap: 25px;
+}
+
+.filter h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.filter__dropdown {
+  position: relative;
+}
+
+.filter__btn {
+  top: 5px;
+  width: 170px;
+  padding: 15px;
+  background-color: $darkbrown;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-filter {
+  padding: 5px;
+}
+
+#filter_showlist {
+  position: absolute;
+  top: 0;
+}
+
+.filter__list {
+  z-index: 2;
+  margin: 0;
+  list-style: none;
+  width: 170px;
+  background-color: #901c1c;
+  border-radius: 5px;
+  padding: 0;
+  position: relative;
+}
+
+.filter__list .has-separator::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 1px;
+  background-color: white;
+}
