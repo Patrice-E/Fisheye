@@ -41,9 +41,9 @@ function handleKeyDown(e) {
 function listenToKeyDown() {
   document.addEventListener('keydown', handleKeyDown);
 }
-// function listentoSubmitForm() {
-//   form.addEventListener('submit', validate);
-// }
+function listentoSubmitForm() {
+  form.addEventListener('submit', validate);
+}
 
 function removeAllListeners() {
   document.removeEventListener('keydown', handleKeyDown);
@@ -57,7 +57,7 @@ function displayModal() {
   modal.style.display = 'block';
   inputs[0].focus();
   listenToKeyDown();
-  // listentoSubmitForm();
+  listentoSubmitForm();
 }
 
 function closeModal() {
@@ -68,16 +68,20 @@ function closeModal() {
   removeAllListeners();
 }
 
-function validate() {
+function validate(e) {
+  if (e) {
+    e.preventDefault();
+  }
   const firstName = inputs[0].value;
   const lastName = inputs[1].value;
   const email = inputs[2].value;
   const msg = inputs[3].value;
-  if (firstName === '' && lastName && email && msg) {
+  if (firstName && lastName && email && msg) {
     console.log(firstName, lastName);
     console.log(email);
     console.log(msg);
     closeModal();
+    return false;
   } else {
     return false;
   }
