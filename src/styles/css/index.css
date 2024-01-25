@@ -200,8 +200,10 @@ a {
 }
 
 .togglelike {
-  width: 20px;
-  margin-left: 4px;
+  width: 26px;
+  height: 25px;
+  border-width: 0;
+  background-color: transparent;
 }
 
 .togglelike input:checked ~ label .empty {
@@ -219,6 +221,8 @@ a {
 .togglelike label .empty,
 .togglelike label .full {
   position: absolute;
+  top: -12px;
+  left: -10px;
 }
 
 .togglelike label .empty {

@@ -31,7 +31,7 @@ function mediaTemplate(namePhotographer, media, Likes, medias) {
     name.textContent = title;
     const nbLikes = document.createElement('span');
     nbLikes.textContent = likes;
-    const togglelike = document.createElement('div');
+    const togglelike = document.createElement('button');
     togglelike.className = 'togglelike';
     const checkLikes = document.createElement('input');
     checkLikes.setAttribute('type', 'checkbox');
@@ -42,12 +42,8 @@ function mediaTemplate(namePhotographer, media, Likes, medias) {
     const emptyLike = document.createElement('img');
     emptyLike.setAttribute('src', './src/assets/icons/pinklike.svg');
     emptyLike.className = 'empty';
-    const fullLike = document.createElement('img');
-    fullLike.setAttribute('src', './src/assets/icons/brownlike.svg');
-    fullLike.className = 'full';
-    label.appendChild(emptyLike);
-    label.appendChild(fullLike);
-    checkLikes.addEventListener('change', function () {
+    togglelike.addEventListener('click', () => {
+      checkLikes.checked = !checkLikes.checked;
       if (checkLikes.checked) {
         nbLikes.textContent = likes + 1;
         Likes.fire('INC');
@@ -55,6 +51,15 @@ function mediaTemplate(namePhotographer, media, Likes, medias) {
         nbLikes.textContent = likes;
         Likes.fire('DEC');
       }
+    });
+    const fullLike = document.createElement('img');
+    fullLike.setAttribute('src', './src/assets/icons/brownlike.svg');
+    fullLike.className = 'full';
+    label.appendChild(emptyLike);
+    label.appendChild(fullLike);
+    label.addEventListener('click', function (e) {
+      e.stopPropagation();
+      checkLikes.checked = !checkLikes.checked;
     });
     togglelike.appendChild(checkLikes);
     togglelike.appendChild(label);
